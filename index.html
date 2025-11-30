@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDPMI Webinar - Outlook Pasar Modal 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .top-bar {
+            background: #f8f9fa;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            height: 60px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #ff6b35;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            position: relative;
+            padding: 80px 20px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 107, 53, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 53, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .meta-item strong {
+            color: #ff6b35;
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 107, 53, 0.2);
+            border-radius: 10px;
+            padding: 15px 20px;
+            min-width: 80px;
+            text-align: center;
+            border: 2px solid rgba(255, 107, 53, 0.5);
+        }
+
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .countdown-separator {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin: 0 5px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
+        }
+
+        /* Flyer Section */
+        .flyer-container {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .flyer-container::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .flyer-image {
+            width: 100%;
+            border-radius: 15px;
+            display: block;
+        }
+
+        /* Speakers Section */
+        .speakers {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #ff8c42);
+            border-radius: 2px;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .speaker-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid #ff6b35;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.2);
+        }
+
+        .speaker-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .speaker-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .speaker-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .speaker-title {
+            font-size: 1rem;
+            color: #ff6b35;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .speaker-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Topics Section */
+        .topics {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .topic-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 35px;
+            border-left: 5px solid #ff6b35;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), transparent);
+            border-radius: 0 0 0 100%;
+        }
+
+        .topic-card:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 5px 20px rgba(255, 107, 53, 0.2);
+            background: white;
+        }
+
+        .topic-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .topic-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .topic-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .topic-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .topic-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Audience Section */
+        .audience {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .audience-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .audience-item:hover {
+            background: rgba(255, 107, 53, 0.1);
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+        }
+
+        .audience-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .audience-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #ff6b35;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            background: white;
+            color: #ff6b35;
+            padding: 20px 60px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #ff6b35;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+                align-items: flex-start;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .event-meta {
+                flex-direction: column;
+            }
+
+            .countdown-timer {
+                gap: 5px;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: 10px 15px;
+            }
+
+            .countdown-value {
+                font-size: 2rem;
+            }
+
+            .countdown-separator {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">
+                <a href="/">
+                    <img src="/media/logos.png" alt="IDPMI">
+                </a>
+            </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#speakers">Narasumber</a></li>
+                <li><a href="#topics">Materi</a></li>
+                <li><a href="#register">Daftar</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">IDPMI ANNUAL MEETING 2025</div>
+                    <h1>Outlook Pasar Modal Tahun 2026</h1>
+                    <p>Peluang, Tantangan, dan Arah Pengembangan Ekosistem</p>
+                    
+                    <div class="event-meta">
+                        <div class="meta-item">
+                            <span><i class="ri-calendar-event-fill"></i></span>
+                            <div>
+                                <strong>Format</strong><br>
+                                Webinar Online
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <span><i class="ri-user-2-line"></i></span>
+                            <div>
+                                <strong>Kapasitas</strong><br>
+                                100 Peserta
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <span><i class="ri-gift-line"></i></span>
+                            <div>
+                                <strong>Benefit</strong><br>
+                                E-Certificate
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Countdown Timer -->
+                    <div class="countdown-container">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 20px; opacity: 0.9;">Acara Dimulai Dalam:</h3>
+                        <div class="countdown-timer">
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="days">00</div>
+                                <div class="countdown-label">Hari</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="hours">00</div>
+                                <div class="countdown-label">Jam</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="minutes">00</div>
+                                <div class="countdown-label">Menit</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="seconds">00</div>
+                                <div class="countdown-label">Detik</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#register" class="cta-button pulse">DAFTAR SEKARANG</a>
+                </div>
+
+                <div class="flyer-container">
+                    <img src="https://cdn-sdotid.adg.id/images/cbd73596-2ddc-421d-b700-f8668e53ad01_1074x1520.webp.jpeg" alt="IDPMI Webinar Flyer" class="flyer-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="speakers" id="speakers">
+        <div class="container">
+            <h2 class="section-title">Narasumber Ahli</h2>
+            <p class="section-subtitle">Belajar langsung dari para praktisi dan pemimpin industri pasar modal Indonesia</p>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-icon">
+                        <img src="/media/jeffrey-hendrik.webp" alt="">
+                    </div>
+                    <h3 class="speaker-name">Jeffrey Hendrik</h3>
+                    <p class="speaker-title">Direktur Pengembangan<br>Bursa Efek Indonesia</p>
+                    <p class="speaker-desc">Membawakan perspektif regulasi dan strategi pengembangan bursa dengan insight strategis dari BEI untuk pertumbuhan pasar modal 2026</p>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-icon">
+                        <img src="/media/1649077522860.jpeg" alt="">
+                    </div>
+                    <h3 class="speaker-name">Dr (Cand.) Edwin Sebayang, MBA</h3>
+                    <p class="speaker-title">Profesional Pasar Modal</p>
+                    <p class="speaker-desc">Menyajikan analisis ekonomi makro dan perspektif akademik tentang perilaku investor serta prospek sektor unggulan 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section class="topics" id="topics">
+        <div class="container">
+            <h2 class="section-title">Materi yang Akan Dibahas</h2>
+            <p class="section-subtitle">Pembahasan komprehensif dari dua sudut pandang: Regulator dan Profesional</p>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <div class="topic-icon"></div>
+                    <h3>Perkembangan Pasar Modal</h3>
+                    <ul>
+                        <li>Data & pencapaian 2024-2025</li>
+                        <li>Proyeksi arah pengembangan 2026</li>
+                        <li>Strategi peningkatan partisipasi investor domestik</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon"></div>
+                    <h3>Tantangan Global & Regulasi</h3>
+                    <ul>
+                        <li>Volatilitas pasar global</li>
+                        <li>Risiko geopolitik 2026</li>
+                        <li>Adaptasi regulasi terkini</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon"></div>
+                    <h3>Inovasi & Ekosistem Digital</h3>
+                    <ul>
+                        <li>Penguatan ekosistem emiten</li>
+                        <li>Pengembangan produk baru BEI</li>
+                        <li>Digitalisasi pasar modal</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon"></div>
+                    <h3>Perilaku Investor</h3>
+                    <ul>
+                        <li>Pola partisipasi Milenial & Gen Z</li>
+                        <li>Pergeseran strategi investasi</li>
+                        <li>Penguatan literasi keuangan</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon"></div>
+                    <h3>Sektor Unggulan 2026</h3>
+                    <ul>
+                        <li>Analisis fundamental ekonomi</li>
+                        <li>Prospek pertumbuhan sektor</li>
+                        <li>Rekomendasi strategis</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon"></div>
+                    <h3>Riset & Pengembangan</h3>
+                    <ul>
+                        <li>Kerangka analisis untuk pengajaran</li>
+                        <li>Peran riset dalam kebijakan</li>
+                        <li>Kolaborasi akademisi-industri</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section class="audience">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Untuk Siapa Webinar Ini?</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Dirancang khusus untuk komunitas akademisi dan praktisi pasar modal</p>
+            <div class="audience-grid">
+                <div class="audience-item">
+                    <div class="audience-icon"></div>
+                    <h3>Dosen & Peneliti</h3>
+                    <p>Bidang keuangan dan pasar modal dari seluruh Indonesia</p>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-icon"></div>
+                    <h3>Praktisi Keuangan</h3>
+                    <p>Profesional di industri pasar modal</p>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-icon"></div>
+                    <h3>Anggota IDPMI</h3>
+                    <p>Seluruh anggota IDPMI nasional</p>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-icon"></div>
+                    <h3>Mahasiswa</h3>
+                    <p>Yang berminat pada pasar modal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Apa yang Anda Dapatkan</h2>
+            <p class="section-subtitle">Manfaat eksklusif untuk seluruh peserta webinar</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="ri-pass-valid-fill"></i></div>
+                    <h3>E-Certificate</h3>
+                    <p>Sertifikat digital resmi dari IDPMI</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="ri-slideshow-line"></i></div>
+                    <h3>Materi Presentasi</h3>
+                    <p>Akses ke semua slide dan materi narasumber</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="ri-video-chat-line"></i></div>
+                    <h3>Rekaman Webinar</h3>
+                    <p>Tonton ulang kapan saja</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="ri-questionnaire-line"></i></div>
+                    <h3>Sesi Tanya Jawab</h3>
+                    <p>Interaksi langsung dengan narasumber</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="register">
+        <div class="container">
+            <h2>Jangan Lewatkan Kesempatan Ini!</h2>
+            <p>Bergabunglah dengan 100 peserta terpilih untuk mendapatkan insight eksklusif<br>tentang masa depan pasar modal Indonesia di tahun 2026</p>
+            <a href="https://forms.gle/your-registration-form" class="cta-button-secondary">DAFTAR WEBINAR SEKARANG</a>
+            <p style="margin-top: 30px; font-size: 1rem; position: relative; z-index: 1;">Gratis E-Certificate & Materi Eksklusif untuk Peserta</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ikatan Dosen Pasar Modal Indonesia (IDPMI). All Rights Reserved.</p>
+                <p style="margin-top: 10px;">IDPMI Annual Meeting & 2026 Capital Market Outlook Webinar</p>
+            </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        // SET TANGGAL DAN WAKTU ACARA DI SINI (Format: Tahun, Bulan-1, Tanggal, Jam, Menit, Detik)
+        // Contoh: 15 Januari 2026, Pukul 14:00 WIB
+        const eventDate = new Date(2025, 11, 5, 8, 0, 0).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                document.querySelector('.countdown-container h3').textContent = 'Acara Sedang Berlangsung!';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Update countdown setiap detik
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.speaker-card, .topic-card, .audience-item, .benefit-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '100%';
+                navMenu.style.left = '0';
+                navMenu.style.right = '0';
+                navMenu.style.background = 'white';
+                navMenu.style.padding = '20px';
+                navMenu.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
